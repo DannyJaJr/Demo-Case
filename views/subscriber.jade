@@ -1,0 +1,46 @@
+﻿extends layout
+block content
+    script(type="text/javascript", src="/javascripts/detailqueryhandler.js")
+    div.row
+        div.col-md-1
+
+        div.col-md-10(class='pageWrapper')
+            div.row
+                div.col-md-12(class='heading')
+                    | Subscription Info App
+            div.row
+                div.col-md-3(style='height:100%; padding-top:50px; text-align:center')
+                    img(src='images/vtg2.png')
+                div.col-md-9(class='bodyblock')
+                    ul(class='nav nav-tabs')
+                      li(role='presentation' )
+                        a(href='/' class='navLink') Home
+                      li(role='presentation' class='active')
+                        a(href='/subscriptions') Subscription Details
+                      li(role='presentation')
+                        a(href='/subscribers' class='navLink') Subscribers
+                    div(class='panelBorder')
+                        br
+                        table#subscriptions(class='table table-hover')
+                            thead
+                                tr
+                                    th
+                                        | Subscriber Name
+                                    th
+                                        | Subscriber Address
+                                    th
+                                        | Subscriber Phone Number
+                                    th
+                                        | Subscriber Email
+                                    th
+                                        | 
+                            tbody
+                                each subscriber in subscribers
+                                    tr
+                                        td= subscriber.Name
+                                        td= subscriber.Subscriber_Address__c
+                                        td= subscriber.Subscriber_Phone__c
+                                        td= subscriber.Subscriber_Email__c
+                                       
+                        table#subscriberdetails
+        div.col-md-1
